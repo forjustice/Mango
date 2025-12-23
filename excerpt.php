@@ -28,10 +28,19 @@
         for ( $i=0; $i < $show_count ;  ) {
         $pic_id = attachment_url_to_postid($embedded_images[1][$i]);
         ?>
+        <?php 
+        // 尝试获取缩略图，如果附件ID无效则使用原始图片URL
+        if ($pic_id) {
+            $data = wp_get_attachment_image_src($pic_id, array(340,340,true));
+            $thumb_url = $data ? $data[0] : $embedded_images[1][$i];
+        } else {
+            $thumb_url = $embedded_images[1][$i];
+        }
+        ?>
         <?php if ( $i == '8' && $show_count > '8' ) {  ?>
-            <a data-fancybox="post-<?php echo $post->ID ?>" href="<?php echo $embedded_images[1][$i] ?>" ><img src="<?php $data = wp_get_attachment_image_src($pic_id, array(340,340,true)); echo $data[0]; ?>"><b>+<?php echo $show_count - $i - 1 ?></b></a>
+            <a data-fancybox="post-<?php echo $post->ID ?>" href="<?php echo $embedded_images[1][$i] ?>" ><img src="<?php echo $thumb_url; ?>"><b>+<?php echo $show_count - $i - 1 ?></b></a>
         <?php } else {  ?>
-            <a data-fancybox="post-<?php echo $post->ID ?>" href="<?php echo $embedded_images[1][$i] ?>" ><img src="<?php $data = wp_get_attachment_image_src($pic_id, array(340,340,true)); echo $data[0]; ?>"></a>
+            <a data-fancybox="post-<?php echo $post->ID ?>" href="<?php echo $embedded_images[1][$i] ?>" ><img src="<?php echo $thumb_url; ?>"></a>
         <?php } ?>
         <?php if( $i == $over ) break; $i++; } ?>
         </div>
