@@ -4,7 +4,7 @@
             <a class="images_author" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo get_avatar(get_the_author_meta('email'), 80); ?></a>
             <div class="images_author_name">
                 <h3><?php the_author_meta('nickname'); ?></h3>
-                <span><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . '前'; ?></span>
+                <span><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . __(' ago', 'mango'); ?></span>
             </div>
         </div>
         <a class="post_loop_more" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><i class="bi bi-three-dots"></i></a>
@@ -46,8 +46,8 @@
         </div>
         <div class="post_loop_tag"><?php the_tags( '<em><i class="bi bi-hash"></i>', '</em><em><i class="bi bi-hash"></i>', '</em>' ); ?></div>
         <div class="post_info_footer">
-            <span class=""><i class="bi bi-chat-square-text-fill"></i><?php comments_popup_link ('0评论','1评论','%评论'); ?></span>
-            <span class=""><i class="bi bi-eye-fill"></i><?php post_views('',''); ?>浏览</span>
+            <span class=""><i class="bi bi-chat-square-text-fill"></i><?php comments_popup_link (__('0 Comments', 'mango'),__('1 Comment', 'mango'),__('% Comments', 'mango')); ?></span>
+            <span class=""><i class="bi bi-eye-fill"></i><?php post_views('',''); ?><?php _e('Views', 'mango'); ?></span>
             <span>
             <a href="javascript:;" data-action="ding" data-id="<?php the_ID(); ?>" class="specsZan <?php if(isset($_COOKIE['specs_zan_'.$post->ID])) echo 'done'; ?>">
                 <i class="bi bi-heart-fill"></i>

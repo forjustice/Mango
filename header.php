@@ -56,7 +56,7 @@
         <div class="row justify-content-center">
             <div class="col-10 col-lg-6 search_box">
                 <form action="/" class="ss_a clearfix" method="get">
-                    <input name="s" aria-label="Search" type="text" onblur="if(this.value=='')this.value='搜索'" onfocus="if(this.value=='搜索')this.value=''" value="搜索">
+                    <input name="s" aria-label="Search" type="text" onblur="if(this.value=='')this.value='<?php _e('Search', 'mango'); ?>'" onfocus="if(this.value=='<?php _e('Search', 'mango'); ?>')this.value=''" value="<?php _e('Search', 'mango'); ?>">
                     <button type="submit" title="Search"><i class="bi bi-search"></i></button>
                 </form>
             </div>

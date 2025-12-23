@@ -6,7 +6,7 @@
                 <div class="catbox">
                     <div class="cat_head">
                         <div class="cat_head_r">
-                            <h2 class="mb-0">搜索"<?php echo get_query_var( 's' ); ?>"的结果！</h2>
+                            <h2 class="mb-0"><?php printf( __('Search Results for: %s', 'mango'), get_query_var( 's' ) ); ?></h2>
                         </div>
                     </div>
                     <div class="post_box">

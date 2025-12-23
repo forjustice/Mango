@@ -324,11 +324,11 @@ $args = array(
     'prev_next' => 1,
     'before_page_number' => '',
     'mid_size' => 1,
-    'prev_text' => __('上页'),
-    'next_text' => __('下页'),
+    'prev_text' => __('Previous', 'mango'),
+    'next_text' => __('Next', 'mango'),
 );
 if ( get_theme_mod( 'ds_cat_ajax' ) ) {
-    echo '<div class="post-read-more">'.get_next_posts_link('加载更多','').'</div>';
+    echo '<div class="post-read-more">'.get_next_posts_link(__('Load More', 'mango'),'').'</div>';
 } else {
     echo '<div class="posts-nav">'.paginate_links($args).'</div>';
 }

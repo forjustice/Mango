@@ -1,5 +1,11 @@
 <?php
 
+//加载语言包
+function mango_setup() {
+    load_theme_textdomain( 'mango', get_template_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'mango_setup' );
+
 //ajax评论
 require get_template_directory(). '/inc/comment/main.php';
 
@@ -18,8 +24,8 @@ require get_template_directory(). '/inc/norm.php';
 //注册导航
 register_nav_menus(
 	array(
-	'main'     => __( '主菜单导航' ),
-	'mob'      => __( '手机导航' ),
+	'main'     => __( 'Main Menu', 'mango' ),
+	'mob'      => __( 'Mobile Menu', 'mango' ),
 	)
 );
 

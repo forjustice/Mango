@@ -58,7 +58,7 @@
                                 	$data = wp_get_attachment_image_src(get_theme_mod('ds_nopic'), array(800,200,true)); echo $data[0];
                                 } ?>);">
 				            <div class="prev_next_info">
-				                <small>上一篇</small>
+				                <small><?php _e('Previous', 'mango'); ?></small>
 				                <p><?php echo $prev_post->post_title;?></p>
 				            </div>
 				            </a>
@@ -76,7 +76,7 @@
                                 	$nopic = wp_get_attachment_image_src(get_theme_mod('ds_nopic'), array(800,300,true)); echo $nopic[0];
                                 } ?>);">
 				            <div class="prev_next_info">
-				                <small>下一篇</small>
+				                <small><?php _e('Next', 'mango'); ?></small>
 				                <p><?php echo $next_post->post_title;?></p>
 				            </div>
 				            </a>
@@ -85,7 +85,7 @@
 				</div>
 
 				<div class="post_related mb-3">
-					<h3 class="widget-title">相关文章</h3>
+					<h3 class="widget-title"><?php _e('Related Posts', 'mango'); ?></h3>
 					<?php
 					global $post;
 					$cats = wp_get_post_categories($post->ID);

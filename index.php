@@ -35,7 +35,7 @@
                             }
                             ?>
                             <h2><?php the_title(); ?></h2>
-                            <i>置顶精彩</i>
+                            <i><?php _e('Sticky Posts', 'mango'); ?></i>
                         </a>
                     </div>
                 <?php $i++; endwhile; wp_reset_query();?>
