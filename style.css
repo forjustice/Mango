@@ -2282,17 +2282,44 @@ html.dark::-webkit-scrollbar-thumb {
 }
 
 .jetpack-subscribe-modal .jetpack-subscribe-modal__content p {
-    margin-bottom: 15px !important;
+    margin-bottom: 25px !important;
     line-height: 1.6 !important;
 }
 
 .jetpack-subscribe-modal input[type="email"] {
-    margin-top: 15px !important;
-    margin-bottom: 15px !important;
-    display: block !important;
-    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    display: inline-block !important;
+    width: auto !important;
+    min-width: 220px !important;
+    height: 48px !important;
+    line-height: normal !important;
+    /* 让文字垂直居中 */
+    padding: 0 15px !important;
+    vertical-align: middle !important;
+    border: 1px solid #7d7d7d !important;
+    /* 加深边框颜色以匹配 */
+    border-right: none !important;
+    /* 移除右边框实现拼接 */
+    border-radius: 50px 0 0 50px !important;
+    background: #fff !important;
 }
 
 .jetpack-subscribe-modal button[type="submit"] {
-    margin-top: 10px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    display: inline-block !important;
+    width: auto !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    padding: 0 25px !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
+    border: 1px solid #333 !important;
+    /* 按钮边框，确保高度计算一致 */
+    border-left: none !important;
+    background: #333 !important;
+    color: #fff !important;
+    border-radius: 0 50px 50px 0 !important;
+    cursor: pointer !important;
 }
