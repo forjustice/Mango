@@ -3,6 +3,7 @@
 //加载语言包
 function mango_setup() {
     load_theme_textdomain( 'mango', get_template_directory() . '/languages' );
+    add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'mango_setup' );
 
